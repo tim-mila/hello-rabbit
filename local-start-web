@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sh mvnw clean spring-boot:run -f ./web/pom.xml -U
