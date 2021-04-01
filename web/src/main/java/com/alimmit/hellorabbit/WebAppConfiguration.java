@@ -22,7 +22,7 @@ public class WebAppConfiguration {
     }
 
     @Bean
-    Binding binding(Queue queue, TopicExchange exchange) {
+    Binding binding(final Queue queue, final TopicExchange exchange) {
         return BindingBuilder.bind(queue).to(exchange).with(Constants.SIMPLE_ROUTING_KEY);
     }
 }

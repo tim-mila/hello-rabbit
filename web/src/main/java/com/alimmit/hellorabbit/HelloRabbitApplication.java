@@ -1,5 +1,6 @@
 package com.alimmit.hellorabbit;
 
+import com.alimmit.hellorabbit.common.Constants;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.slf4j.Logger;
@@ -28,7 +29,7 @@ public class HelloRabbitApplication {
 	@PostMapping("/test")
 	public void test(@RequestBody MessageRequest messageRequest) {
 		logger.info("Send message {}", messageRequest.message);
-		rabbitTemplate.convertAndSend("rabbit.test.exchange", "foo.bar.baz", messageRequest.message);
+		rabbitTemplate.convertAndSend(Constants.SIMPLE_EXCHANGE_NAME, "foo.bar.baz", messageRequest.message);
 	}
 
 	public static final class MessageRequest {
