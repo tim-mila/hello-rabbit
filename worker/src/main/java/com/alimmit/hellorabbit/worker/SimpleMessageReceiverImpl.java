@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("simpleMessageReceiver")
 public class SimpleMessageReceiverImpl implements SimpleMessageReceiver<String> {
 
     private static final Logger logger = LoggerFactory.getLogger(SimpleMessageReceiverImpl.class);
